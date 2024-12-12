@@ -1,13 +1,13 @@
 window.onload = function() {
     let attempts = 0;
     
-    // Display the custom modal to enter the password
+    // Show the password modal when the page loads
     const passwordModal = document.getElementById("passwordModal");
     const passwordInput = document.getElementById("passwordInput");
     const submitButton = document.getElementById("submitPassword");
     const errorMessage = document.getElementById("errorMessage");
     
-    passwordModal.style.display = 'block'; // Show modal on load
+    passwordModal.style.display = 'flex'; // Show the modal
 
     // When the submit button is clicked
     submitButton.onclick = function() {
@@ -17,17 +17,9 @@ window.onload = function() {
             // Hide the modal
             passwordModal.style.display = 'none';
             
-            // Show the download content
+            // Show the content with the download links
             const contentDiv = document.getElementById('content');
             contentDiv.style.display = 'block';  // Make the content visible
-            contentDiv.innerHTML = 
-                '<h2>../root/m_reports/oysoga/alpha/private/</h2>' +
-                '<ul class="file-list">' +
-                    '<li><a href="downloads/galactica_white_paper.pdf" download>GalaWP.pdf</a></li>' +
-                    '<li><a href="downloads/oysoga.txt" download>oysoga_mission_report.txt</a></li>' +
-                    '<li><a href="downloads/yek_saw_ver.png" download>yek_ver_sata_sample.png</a></li>' +
-                    '<li><a href="downloads/tools.txt" download>tools.txt</a></li>' +
-                '</ul>';
         } else {
             attempts++;
             errorMessage.style.display = 'block';

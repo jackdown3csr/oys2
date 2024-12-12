@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turbo downloader</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico">
@@ -9,6 +10,7 @@
 <body>
     <header>
         <div class="logo" aria-hidden="true">
+            <!-- ASCII art for Turbo downloader logo -->
             <pre>
 T U R B O D O W N L O A D E R
  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
@@ -17,23 +19,32 @@ T U R B O D O W N L O A D E R
         </div>
         <h1>OYS_dwnl</h1>
     </header>
-    <main id="content">
-        <!-- Download links will be displayed here -->
-    </main>
-
-    <!-- Custom Password Modal -->
+    
+    <!-- Password Modal -->
     <div id="passwordModal" class="modal">
         <div class="modal-content">
-            <h2>Please enter the password to access Turbo downloader:</h2>
-            <input type="password" id="passwordInput" class="modal-input" placeholder="Enter password">
-            <button id="submitPassword" class="modal-btn">Submit</button>
-            <p id="errorMessage" class="error-message" style="display: none;">Incorrect password. Try again.</p>
+            <h2>Enter Password</h2>
+            <input type="password" id="passwordInput" class="password-input" placeholder="Enter Password">
+            <button id="submitPassword" class="submit-button">Submit</button>
+            <p id="errorMessage" class="error-message"></p>
         </div>
     </div>
 
+    <!-- Main content for the download links -->
+    <main id="content" style="display: none;">
+        <h2>../root/m_reports/oysoga/alpha/private/</h2>
+        <ul class="file-list">
+            <li><a href="downloads/galactica_white_paper.pdf" download>GalaWP.pdf</a></li>
+            <li><a href="downloads/oysoga.txt" download>oysoga_mission_report.txt</a></li>
+            <li><a href="downloads/yek_saw_ver.png" download>yek_ver_sata_sample.png</a></li>
+            <li><a href="downloads/tools.txt" download>tools.txt</a></li>
+        </ul>
+    </main>
+
     <footer>
-        <p>&copy; 2024 OYSOGA. No rights reserved.</p>
+        <p>&copy; 2024 OYSOGA. All rights reserved.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
