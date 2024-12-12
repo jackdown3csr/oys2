@@ -12,7 +12,7 @@ window.onload = function() {
             // Create download links
             var contentDiv = document.getElementById('content');
             contentDiv.innerHTML = 
-                '<h2>Welcome to Turbo downloader</h2>' +
+                '<h2>../root/m_reports/oysoga/alpha/private/</h2>' +
                 '<ul class="file-list">' +
                     '<li><a href="downloads/galactica_white_paper.pdf" download>GalaWP.pdf</a></li>' +
                     '<li><a href="downloads/oysoga.txt" download>oysoga_mission_report.txt</a></li>' +
