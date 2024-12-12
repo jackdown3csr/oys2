@@ -8,9 +8,14 @@ window.onload = function() {
             return;
         }
         if (password.toLowerCase() === "rev") {
-            document.getElementById('content').classList.add('visible');
-            // Create download links
+            // Show the content and apply the fade-in effect
             var contentDiv = document.getElementById('content');
+            contentDiv.style.display = 'block';  // Ensure the content is visible
+            setTimeout(function() {
+                contentDiv.classList.add('visible');  // Apply the fade-in effect
+            }, 10); // Adding a small delay to ensure the display is set first
+
+            // Create download links
             contentDiv.innerHTML = 
                 '<h2>../root/m_reports/oysoga/alpha/private/</h2>' +
                 '<ul class="file-list">' +
