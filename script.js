@@ -1,21 +1,39 @@
-// Function to handle the password verification and content display
-document.getElementById('submit-btn').addEventListener('click', function() {
-    var password = document.getElementById('password').value;
-    var correctPassword = "turbo2024"; // správné heslo
+window.onload = function() {
+    let attempts = 0;
+    const maxAttempts = 5;
 
-    if (password === correctPassword) {
-        // Skrytí divu pro zadání hesla a zobrazení souborů
-        document.querySelector('.password-popup').style.display = 'none';
-        document.getElementById('files').style.display = 'block';
-    } else {
-        // Zobrazení chybové zprávy při nesprávném heslu
-        document.getElementById('error-message').textContent = "Incorrect password, please try again!";
-    }
-});
+    // Handle password input and submission
+    const passwordInput = document.getElementById('password');
+    const submitBtn = document.getElementById('submit');
+    const errorMsg = document.getElementById('error-msg');
+    const fileList = document.getElementById('file-list');
+    const passwordContainer = document.getElementById('password-container');
 
-// Umožní potvrdit heslo stiskem Enter
-document.getElementById('password').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        document.getElementById('submit-btn').click();
+    // Function to check the password and handle access
+    function checkPassword() {
+        const password = passwordInput.value.trim();
+        if (password.toLowerCase() === "rev") {
+            fileList.style.display = 'block';
+            passwordContainer.style.display = 'none'; // Hide password container
+        } else {
+            attempts++;
+            errorMsg.innerText = `Incorrect password. ${maxAttempts - attempts} attempts left.`;
+            if (attempts >= maxAttempts) {
+                errorMsg.innerText = "Access denied.";
+                submitBtn.disabled = true; // Disable the submit button after max attempts
+            }
+        }
     }
-});
+
+    // Submit button click event
+    submitBtn.addEventListener('click', function() {
+        checkPassword();
+    });
+
+    // Allow "Enter" key to trigger password check
+    passwordInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            checkPassword();
+        }
+    });
+};
