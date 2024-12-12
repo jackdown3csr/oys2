@@ -9,7 +9,7 @@ window.onload = function() {
             '<ul class="file-list">' +
                 '<li><a href="downloads/file1.txt" download>file1.txt</a></li>' +
                 '<li><a href="downloads/file2.zip" download>file2.zip</a></li>' +
-                '<li><a href="downloads/image.jpg" download>image.jpg</a></li>' +
+                '<li><a href="downloads/yek_saw_ver.png" download>yek_saw_ver_REVIEW_THIS.png</a></li>' +
             '</ul>';
     } else {
         alert("Access denied.");
