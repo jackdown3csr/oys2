@@ -1,98 +1,77 @@
-/* General page styling */
+/* Basic styles for the page */
 body {
+    background-color: #1a1a1a;
+    color: #aaffff;
     font-family: 'Courier New', Courier, monospace;
-    background-color: #1d1f22;
-    color: #33ff33;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Header and logo */
 header {
-    text-align: left;
-    padding-left: 20px;
-    margin-top: 20px;
-}
-
-header .logo {
-    font-family: monospace;
-    white-space: pre-wrap;
+    margin-bottom: 30px;
 }
 
 h1 {
-    font-size: 36px;
-    text-transform: uppercase;
-    color: #00ff99;
+    font-size: 2em;
+    color: #00ff00;
 }
 
-/* Console simulation */
-.console {
-    position: absolute;
-    top: 10%;
-    left: 5%;
-    transform: translateX(0); /* Align left */
-    width: 90%;
-    max-width: 500px;
-    background-color: #2c2f36;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
-}
-
-.console p {
-    margin: 5px 0;
-    font-size: 18px;
-}
-
-.console-input {
+/* Progress Bar Styling */
+.progress-bar-container {
     width: 100%;
-    background-color: #2c2f36;
-    border: none;
-    border-bottom: 2px solid #33ff33;
-    color: #33ff33;
-    font-size: 18px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #00FF00; /* Sci-fi green */
+    border-radius: 10px;
+    width: 0%;
+}
+
+/* Countdown Timer */
+#countdown {
+    font-size: 24px;
+    color: #ffcc00;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Terminal output effect */
+.terminal-output {
+    font-family: 'Courier New', Courier, monospace;
+    color: #00ff00;
+    background: #1a1a1a;
     padding: 10px;
-    margin-top: 10px;
-    outline: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
-.console-input:focus {
-    border-bottom: 2px solid #ffcc00;
-}
-
-/* Styling for download section */
-#content {
-    text-align: left;
-    display: none;
-    padding-left: 20px;
-}
-
-.file-list {
+/* File list */
+ul.file-list {
     list-style-type: none;
     padding: 0;
 }
 
-.file-list li {
+ul.file-list li {
     margin: 10px 0;
 }
 
-.file-list a {
-    color: #00ff99;
+ul.file-list a {
     text-decoration: none;
-    font-size: 20px;
+    color: #00ff00;
+    font-weight: bold;
+    border: 1px solid #00ff00;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.file-list a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    text-align: left;
-    color: #00ff99;
-    padding-left: 20px;
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
+ul.file-list a:hover {
+    background-color: #00ff00;
+    color: #1a1a1a;
 }
