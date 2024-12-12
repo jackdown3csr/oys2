@@ -1,21 +1,15 @@
 window.onload = function() {
-    // Show the password modal as soon as the page loads
-    document.getElementById('passwordModal').style.display = 'flex';
-
-    // Get the password input and submit button
-    var passwordInput = document.getElementById('passwordInput');
-    var submitButton = document.getElementById('submitPassword');
-    var errorMessage = document.getElementById('errorMessage');
-
-    // Function to handle password validation and content reveal
-    function validatePassword() {
-        var password = passwordInput.value;
-        
+    let attempts = 0;
+    while (attempts < 5) {
+        var password = prompt("Enter password to access Turbo downloader:");
+        if (password === null) {
+            // User clicked cancel
+            alert("Access aborted.");
+            return;
+        }
         if (password.toLowerCase() === "rev") {
-            document.getElementById('passwordModal').style.display = 'none';  // Hide password modal
-            document.getElementById('content').style.display = 'block';  // Show download content
-
-            // Create download links dynamically
+            document.getElementById('content').style.display = 'block';
+            // Create download links
             var contentDiv = document.getElementById('content');
             contentDiv.innerHTML = 
                 '<h2>../root/m_reports/oysoga/alpha/private/</h2>' +
@@ -25,20 +19,13 @@ window.onload = function() {
                     '<li><a href="downloads/yek_saw_ver.png" download>yek_ver_sata_sample.png</a></li>' +
                     '<li><a href="downloads/tools.txt" download>tools.txt</a></li>' +
                 '</ul>';
+            break;
         } else {
-            errorMessage.textContent = "Incorrect password. Try again.";
+            attempts++;
+            alert("Incorrect password. " + (5 - attempts) + " attempts left.");
         }
     }
-
-    // Event listener for the submit button
-    submitButton.addEventListener('click', function() {
-        validatePassword();
-    });
-
-    // Allow submitting the password with the Enter key
-    passwordInput.addEventListener('keypress', function(event) {
-        if (event.key === "Enter") {
-            validatePassword();
-        }
-    });
+    if (attempts >= 5) {
+        alert("Access denied.");
+    }
 };
