@@ -1,8 +1,5 @@
 window.onload = function() {
-    let attempts = 0;
-    const maxAttempts = 5;
-
-    // Handle password input and submission
+    // No limit on attempts now
     const passwordInput = document.getElementById('password');
     const submitBtn = document.getElementById('submit');
     const errorMsg = document.getElementById('error-msg');
@@ -16,12 +13,7 @@ window.onload = function() {
             fileList.style.display = 'block';
             passwordContainer.style.display = 'none'; // Hide password container
         } else {
-            attempts++;
-            errorMsg.innerText = `Incorrect password. ${maxAttempts - attempts} attempts left.`;
-            if (attempts >= maxAttempts) {
-                errorMsg.innerText = "Access denied.";
-                submitBtn.disabled = true; // Disable the submit button after max attempts
-            }
+            errorMsg.innerText = "Incorrect password. Please try again.";
         }
     }
 

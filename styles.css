@@ -12,8 +12,10 @@ body {
     color: white;
     padding: 10px;
     text-align: left;
+    margin-top: 0;
 }
 
+/* Logo styling */
 header {
     text-align: left;
     padding-bottom: 20px;
@@ -87,4 +89,13 @@ ul.file-list a {
 
 ul.file-list a:hover {
     text-decoration: underline;
+}
+
+/* Ensure layout starts from the top of the page */
+body {
+    margin-top: 0;
+}
+
+input, button {
+    text-align: left;
 }
