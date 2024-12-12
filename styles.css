@@ -18,7 +18,9 @@ body {
 }
 
 header {
-    text-align: center;
+    text-align: left; /* Zarovnání vlevo */
+    width: 100%;
+    margin-left: 10px; /* Malý okraj zleva */
 }
 
 h1 {
@@ -30,6 +32,7 @@ h1 {
 .logo pre {
     font-size: 1.5rem;
     color: #39FF14;
+    margin: 0;
 }
 
 main {
@@ -53,6 +56,8 @@ input {
     border-radius: 5px;
     text-align: left;
     font-size: 16px;
+    display: block;
+    margin-left: 0; /* Zarovnání vlevo */
 }
 
 button {
