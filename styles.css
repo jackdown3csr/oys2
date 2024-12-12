@@ -50,14 +50,17 @@ h1 {
 }
 
 .password-input {
-    width: 100%;
-    padding: 5px; /* Reduced padding for smaller input */
+    width: 50%; /* Reduced width */
+    padding: 5px; /* Reduced padding */
     margin: 10px 0;
     background-color: #444;
     color: #fff;
     border: 1px solid #777;
     border-radius: 5px;
-    font-size: 14px; /* Adjust font size */
+    font-size: 14px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .submit-button {
