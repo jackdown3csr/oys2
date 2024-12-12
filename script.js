@@ -4,8 +4,9 @@ window.onload = function() {
     // Funkce pro ověření hesla
     function checkPassword() {
         var password = document.getElementById("password").value;
+        var errorMessage = document.getElementById("error-message");
         if (password === "") {
-            alert("Please enter a password.");
+            errorMessage.textContent = "Please enter a password.";
             return;
         }
         
@@ -21,11 +22,12 @@ window.onload = function() {
                     '<li><a href="downloads/yek_saw_ver.png" download>yek_ver_sata_sample.png</a></li>' +
                     '<li><a href="downloads/tools.txt" download>tools.txt</a></li>' +
                 '</ul>';
+            errorMessage.textContent = '';  // Clear any error message on success
         } else {
             attempts++;
-            alert("Incorrect password. " + (5 - attempts) + " attempts left.");
+            errorMessage.textContent = "Incorrect password. " + (5 - attempts) + " attempts left.";
             if (attempts >= 5) {
-                alert("Access denied.");
+                errorMessage.textContent = "Access denied.";
             }
         }
     }
