@@ -16,7 +16,7 @@ T U R B O D O W N L O A D E R
   v v v v v v v v v v v v v v
             </pre>
         </div>
-        <h1>OYS_Files_beta2</h1>
+        <h1>Welcome to the Download Section</h1>
     </header>
     <main id="content" class="level-1">
         <!-- Download links will be displayed here -->
@@ -26,7 +26,52 @@ T U R B O D O W N L O A D E R
     </footer>
     <script>
         // Obfuscated JavaScript code
-        window.onload=function(){function a(){var a=0;function b(){var b=prompt("Enter password to access Turbo downloader:");if(b===null){alert("Access aborted.");return;}return b.toLowerCase()}function c(b){return b==="rev"}function d(){document.getElementById("content").style.display="block";var a=document.getElementById("content");a.innerHTML='<p class="console-path"><code>/root/m_reports/oysoga/alpha/private/</code></p>'+'<p>Files available for download:</p>'+'<ul class="file-list">'+'<li><a href="downloads/galactica_white_paper.pdf" download>GalaWP.pdf</a></li>'+'<li><a href="downloads/oysoga.txt" download>oysoga_mission_report.txt</a></li>'+'<li><a href="downloads/yek_saw_ver.png" download>yek_ver_sata_sample.png</a></li>'+'<li><a href="downloads/tools.tx" download>tools.txt</a></li>'+'</ul>'}function e(){var b=b();if(c(b)){d()}else{a++;alert("Incorrect password. "+(5-a)+" attempts left.");if(a<5){e()}else{alert("Access denied.")}}}e()}a()};
+        window.onload = function() {
+            console.log("Script loaded and running."); // Debugging
+            function a() {
+                var a = 0;
+                function b() {
+                    var b = prompt("Enter password to access Turbo downloader:");
+                    if (b === null) {
+                        alert("Access aborted.");
+                        return;
+                    }
+                    return b.toLowerCase();
+                }
+                function c(b) {
+                    return b === "rev";
+                }
+                function d() {
+                    document.getElementById("content").style.display = "block";
+                    var a = document.getElementById("content");
+                    a.innerHTML = 
+                        '<p class="console-path"><code>/root/m_reports/oysoga/alpha/private/</code></p>' +
+                        '<p>Files available for download:</p>' +
+                        '<ul class="file-list">' +
+                            '<li><a href="downloads/galactica_white_paper.pdf" download>GalaWP.pdf</a></li>' +
+                            '<li><a href="downloads/oysoga.txt" download>oysoga_mission_report.txt</a></li>' +
+                            '<li><a href="downloads/yek_saw_ver.png" download>yek_ver_sata_sample.png</a></li>' +
+                            '<li><a href="downloads/tools.tx" download>tools.txt</a></li>' +
+                        '</ul>';
+                }
+                function e() {
+                    var b = b();
+                    if (c(b)) {
+                        d();
+                    } else {
+                        a++;
+                        alert("Incorrect password. " + (5 - a) + " attempts left.");
+                        if (a < 5) {
+                            e();
+                        } else {
+                            alert("Access denied.");
+                        }
+                    }
+                }
+                e();
+            }
+            a();
+        };
     </script>
 </body>
 </html>
