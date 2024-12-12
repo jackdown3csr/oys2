@@ -58,4 +58,12 @@ window.onload = function() {
             break;
         } else {
             attempts++;
-            document.getElementById('error-sound').play();  //
+            document.getElementById('error-sound').play();  // Play error sound
+            alert("Incorrect password. " + (5 - attempts) + " attempts left.");
+        }
+    }
+
+    if (attempts >= 5) {
+        alert("Access denied.");
+    }
+};
