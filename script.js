@@ -1,7 +1,7 @@
 window.onload = function() {
     let attempts = 0;
     
-    // Display the custom modal to enter password
+    // Display the custom modal to enter the password
     const passwordModal = document.getElementById("passwordModal");
     const passwordInput = document.getElementById("passwordInput");
     const submitButton = document.getElementById("submitPassword");
@@ -18,8 +18,8 @@ window.onload = function() {
             passwordModal.style.display = 'none';
             
             // Show the download content
-            document.getElementById('content').style.display = 'block';
-            var contentDiv = document.getElementById('content');
+            const contentDiv = document.getElementById('content');
+            contentDiv.style.display = 'block';  // Make the content visible
             contentDiv.innerHTML = 
                 '<h2>../root/m_reports/oysoga/alpha/private/</h2>' +
                 '<ul class="file-list">' +
