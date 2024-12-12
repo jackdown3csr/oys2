@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turbo Downloader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico">
-    <!-- Přidání Orbitron fontu z Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <div class="logo" aria-hidden="true">
+        <div class="logo">
             <pre>
 ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
 █ T U R B O D O W N L █
@@ -21,16 +20,28 @@
         </div>
     </header>
     <main id="content">
-        <!-- Download links will be displayed here -->
+        <!-- Initial content hidden, password entry form shown until password is entered -->
+        <div class="password-popup">
+            <h2>Enter Password</h2>
+            <input type="password" id="password" placeholder="Password" class="password-input">
+            <button id="submit-btn" class="submit-btn">Submit</button>
+            <p id="error-message" class="error-message"></p>
+        </div>
+
+        <!-- Content section that is shown after correct password entry -->
+        <div id="files" style="display:none;">
+            <h2>../root/m_reports/oysoga/alpha/private/</h2>
+            <ul class="file-list">
+                <li><a href="downloads/galactica_white_paper.pdf" download>GalaWP.pdf</a> - 1.5 MB</li>
+                <li><a href="downloads/oysoga.txt" download>oysoga_mission_report.txt</a> - 2.2 MB</li>
+                <li><a href="downloads/yek_saw_ver.png" download>yek_ver_sata_sample.png</a> - 450 KB</li>
+                <li><a href="downloads/tools.txt" download>tools.txt</a> - 1.1 MB</li>
+            </ul>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 OYSOGA . No rights reserved.</p>
+        <p>&copy; 2024 OYSOGA. No rights reserved.</p>
     </footer>
-    <div class="password-popup">
-        <input type="password" id="password" placeholder="Enter password..." class="password-input">
-        <button id="submit-btn" class="password-button">Submit</button>
-        <p id="error-message" class="error-message"></p>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
