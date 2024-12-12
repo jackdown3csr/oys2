@@ -1,0 +1,54 @@
+
+### AI Tools by Category
+
+#### General AI Tools
+- ChatGPT
+- Bard
+- Claude
+- Hugging Face Transformers
+- Perplexity AI
+- Jasper
+
+#### Generative AI (Text/Image/Audio)
+- MidJourney
+- Stable Diffusion
+- DALL-E
+- RunwayML
+- ElevenLabs
+- AIVA
+
+#### Machine Learning Frameworks
+- TensorFlow
+- PyTorch
+- Scikit-learn
+- Keras
+- MLFlow
+
+#### Data Analysis and Visualization
+- Pandas
+- Tableau
+- Matplotlib
+- Power BI
+- Seaborn
+
+#### Steganography Tools
+- OpenStego
+- SilentEye
+- Steghide
+- DeepSound
+- Hide'N'Send
+
+#### Cipher Tools
+- Cryptool
+- Hashcat
+- CyberChef
+- Gpg4win
+- VeraCrypt
+
+#### Audio Tools
+- Audacity
+- FL Studio
+- Ableton Live
+- Pro Tools
+- GarageBand
+- Reaper
