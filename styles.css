@@ -1,99 +1,96 @@
-/* Global Styles */
-* {
+/* General page styling */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+    text-align: center;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Orbitron', sans-serif;
-}
-
-body {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: #181818;
-    color: #fff;
-    height: 100vh;
     justify-content: center;
-    font-size: 18px;
 }
 
+/* Styling for the header with the ASCII logo */
 header {
-    text-align: left; /* Zarovnání vlevo */
-    width: 100%;
-    margin-left: 10px; /* Malý okraj zleva */
+    margin-bottom: 50px;
+}
+
+.logo {
+    text-align: left;
+    margin: 0 auto;
 }
 
 h1 {
-    color: #39FF14;
-    font-size: 2rem;
-    margin-top: 10px;
+    font-size: 2em;
+    margin-top: 0;
 }
 
-.logo pre {
-    font-size: 1.5rem;
-    color: #39FF14;
-    margin: 0;
-}
-
-main {
-    margin-top: 20px;
-}
-
-footer {
-    position: absolute;
-    bottom: 10px;
-    text-align: center;
-    font-size: 12px;
-}
-
-input {
-    width: 50%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #282828;
-    color: #39FF14;
-    border: none;
-    border-radius: 5px;
-    text-align: left;
-    font-size: 16px;
+/* Password input styling */
+.password-popup {
     display: block;
-    margin-left: 0; /* Zarovnání vlevo */
+    margin-top: 50px;
 }
 
-button {
-    background-color: #39FF14;
-    color: black;
-    border: none;
+.password-input {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #222;
+    color: #E0E0E0;
+    border: 2px solid #00FF00;
+    padding: 10px;
+    font-size: 1em;
+    text-align: left;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.password-button {
+    background-color: #00FF00;
+    color: #121212;
     padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
+    font-size: 1em;
+    border: none;
     cursor: pointer;
-    margin-top: 10px;
 }
 
-button:hover {
-    background-color: #32b400;
+.password-button:hover {
+    background-color: #32CD32;
 }
 
-ul.file-list {
+/* Content section when access is granted */
+#content {
+    display: none;
+    margin-top: 20px;
+}
+
+.file-list {
     list-style-type: none;
     padding: 0;
 }
 
-ul.file-list li {
-    margin-bottom: 10px;
+.file-list li {
+    margin: 10px 0;
 }
 
-ul.file-list a {
-    color: #39FF14;
+.file-list a {
+    color: #00FF00;
     text-decoration: none;
-    font-size: 16px;
 }
 
-ul.file-list a:hover {
+.file-list a:hover {
     text-decoration: underline;
 }
 
-footer p {
-    color: #666;
+/* Footer styling */
+footer {
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* Center the popup box */
+.password-popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

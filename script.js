@@ -1,15 +1,17 @@
 window.onload = function() {
     let attempts = 0;
-    while (attempts < 5) {
-        var password = prompt("Enter password to access Turbo downloader:");
-        if (password === null) {
-            // User clicked cancel
-            alert("Access aborted.");
+
+    // Funkce pro ověření hesla
+    function checkPassword() {
+        var password = document.getElementById("password").value;
+        if (password === "") {
+            alert("Please enter a password.");
             return;
         }
+        
         if (password.toLowerCase() === "rev") {
             document.getElementById('content').style.display = 'block';
-            // Create download links
+            // Vytvoření seznamu souborů ke stažení
             var contentDiv = document.getElementById('content');
             contentDiv.innerHTML = 
                 '<h2>../root/m_reports/oysoga/alpha/private/</h2>' +
@@ -19,13 +21,22 @@ window.onload = function() {
                     '<li><a href="downloads/yek_saw_ver.png" download>yek_ver_sata_sample.png</a></li>' +
                     '<li><a href="downloads/tools.txt" download>tools.txt</a></li>' +
                 '</ul>';
-            break;
         } else {
             attempts++;
             alert("Incorrect password. " + (5 - attempts) + " attempts left.");
+            if (attempts >= 5) {
+                alert("Access denied.");
+            }
         }
     }
-    if (attempts >= 5) {
-        alert("Access denied.");
-    }
+
+    // Při kliknutí na tlačítko
+    document.getElementById("submit-btn").addEventListener("click", checkPassword);
+
+    // Při stisku klávesy Enter v inputu pro heslo
+    document.getElementById("password").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            checkPassword();
+        }
+    });
 };

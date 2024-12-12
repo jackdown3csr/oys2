@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turbo downloader</title>
+    <title>Turbo Downloader</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <!-- New ASCII art for Turbo downloader logo -->
+        <div class="logo" aria-hidden="true">
             <pre>
 ▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
 █ T U R B O D O W N L █
@@ -20,12 +19,16 @@
         </div>
         <h1>OYS_dwnl</h1>
     </header>
-    <main id="content" style="display: none;">
+    <main id="content">
         <!-- Download links will be displayed here -->
     </main>
     <footer>
-        <p>&copy; 2024 OYSOGA. No rights reserved.</p>
+        <p>&copy; 2024 OYSOGA . No rights reserved.</p>
     </footer>
+    <div class="password-popup">
+        <input type="password" id="password" placeholder="Enter password..." class="password-input">
+        <button id="submit-btn" class="password-button">Submit</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
