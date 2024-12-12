@@ -1,77 +1,88 @@
-/* Basic styles for the page */
+/* Body settings for dark mode terminal look */
 body {
-    background-color: #1a1a1a;
-    color: #aaffff;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    padding: 20px;
+    background-color: black;
+    color: #00ff00; /* Green text */
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
 }
 
+/* Center and align the content */
 header {
-    margin-bottom: 30px;
-}
-
-h1 {
-    font-size: 2em;
-    color: #00ff00;
-}
-
-/* Progress Bar Styling */
-.progress-bar-container {
-    width: 100%;
-    height: 20px;
-    background-color: #333;
-    border-radius: 10px;
-    margin: 10px 0;
-    display: inline-block;
-}
-
-.progress-bar {
-    height: 100%;
-    background-color: #00FF00; /* Sci-fi green */
-    border-radius: 10px;
-    width: 0%;
-}
-
-/* Countdown Timer */
-#countdown {
-    font-size: 24px;
-    color: #ffcc00;
     text-align: center;
     margin-top: 20px;
 }
 
-/* Terminal output effect */
-.terminal-output {
-    font-family: 'Courier New', Courier, monospace;
-    color: #00ff00;
-    background: #1a1a1a;
-    padding: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-/* File list */
-ul.file-list {
-    list-style-type: none;
+/* Terminal-like border for the logo */
+.logo pre {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    color: #00ff00;
+    margin: 0;
     padding: 0;
 }
 
-ul.file-list li {
-    margin: 10px 0;
+/* Content area with fade-in animation */
+#content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    padding: 20px;
+    margin-top: 20px;
 }
 
-ul.file-list a {
+#content.visible {
+    opacity: 1;
+}
+
+/* Styling for download links */
+.file-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.file-list a {
     text-decoration: none;
-    color: #00ff00;
-    font-weight: bold;
-    border: 1px solid #00ff00;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    color: #aaffff; /* Light cyan */
+    font-size: 1.2em;
+    display: block;
+    padding: 8px;
+    border-left: 3px solid #00ff00;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease-in-out;
 }
 
-ul.file-list a:hover {
-    background-color: #00ff00;
-    color: #1a1a1a;
+.file-list a:hover {
+    color: #ff8800; /* Orange color on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #00ff00;
+}
+
+/* Ensures content is properly aligned on all screen sizes */
+@media (max-width: 600px) {
+    .logo pre {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .file-list a {
+        font-size: 1em;
+    }
 }
