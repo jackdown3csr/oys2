@@ -1,5 +1,5 @@
 window.onload = function() {
-    // No limit on attempts now
+    // Get elements from the DOM
     const passwordInput = document.getElementById('password');
     const submitBtn = document.getElementById('submit');
     const errorMsg = document.getElementById('error-msg');
@@ -14,6 +14,7 @@ window.onload = function() {
             passwordContainer.style.display = 'none'; // Hide password container
         } else {
             errorMsg.innerText = "Incorrect password. Please try again.";
+            errorMsg.style.color = 'red'; // Make error message red for visibility
         }
     }
 
@@ -28,4 +29,21 @@ window.onload = function() {
             checkPassword();
         }
     });
+
+    // Clear error message when user starts typing
+    passwordInput.addEventListener('input', function() {
+        errorMsg.innerText = ''; // Clear error message when typing
+    });
+
+    // Optionally, disable the submit button when the password is empty
+    passwordInput.addEventListener('input', function() {
+        if (passwordInput.value.trim() === '') {
+            submitBtn.disabled = true; // Disable submit if no password is entered
+        } else {
+            submitBtn.disabled = false; // Enable submit if password is entered
+        }
+    });
+
+    // Initialize: disable submit button initially until the user starts typing
+    submitBtn.disabled = true;
 };
