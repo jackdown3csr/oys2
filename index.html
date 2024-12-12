@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Turbo Downloader</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Turbo downloader</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico">
 </head>
@@ -21,8 +20,19 @@ T U R B O D O W N L O A D E R
     <main id="content">
         <!-- Download links will be displayed here -->
     </main>
+
+    <!-- Custom Password Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <h2>Please enter the password to access Turbo downloader:</h2>
+            <input type="password" id="passwordInput" class="modal-input" placeholder="Enter password">
+            <button id="submitPassword" class="modal-btn">Submit</button>
+            <p id="errorMessage" class="error-message" style="display: none;">Incorrect password. Try again.</p>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2024 OYSOGA . No rights reserved.</p>
+        <p>&copy; 2024 OYSOGA. No rights reserved.</p>
     </footer>
     <script src="script.js"></script>
 </body>

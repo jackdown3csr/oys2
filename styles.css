@@ -65,6 +65,7 @@ h1 {
     color: #ff8800; /* Orange color on hover */
 }
 
+/* Footer */
 footer {
     text-align: left;
     padding: 20px;
@@ -72,6 +73,67 @@ footer {
     bottom: 0;
     width: 100%;
     color: #00ff00;
+}
+
+/* Modal styles for the password input */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+    padding-top: 60px;
+    text-align: center;
+}
+
+.modal-content {
+    background-color: black;
+    padding: 20px;
+    margin: auto;
+    border: 2px solid #00ff00;
+    width: 50%;
+    max-width: 400px;
+}
+
+.modal h2 {
+    color: #00ff00;
+    font-size: 1.5em;
+}
+
+.modal-input {
+    padding: 10px;
+    font-size: 1.2em;
+    width: 100%;
+    margin-top: 20px;
+    background-color: black;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+}
+
+.modal-btn {
+    background-color: #00ff00;
+    color: black;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.modal-btn:hover {
+    background-color: #ff8800; /* Hover effect for button */
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 1em;
+    margin-top: 10px;
 }
 
 /* Ensures content is properly aligned on all screen sizes */
