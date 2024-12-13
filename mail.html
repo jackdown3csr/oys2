@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falešná adresa - Odeslat zprávu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        a {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Klikni na falešnou adresu pro zadání zprávy:</p>
+    <a href="#" id="fake-email">JCO3@@SHAR.GA</a>
+
+    <div id="message-form" style="display:none;">
+        <h3>Zadejte zprávu</h3>
+        <textarea id="message" rows="4" cols="50" placeholder="Zadejte svou zprávu"></textarea><br>
+        <button id="send-message">Odeslat zprávu</button>
+    </div>
+
+    <script>
+        // Při kliknutí na falešnou adresu zobrazí formulář pro zprávu
+        document.getElementById("fake-email").addEventListener("click", function(event) {
+            event.preventDefault(); // Zamezí skutečnému otevření odkazu
+            document.getElementById("message-form").style.display = 'block'; // Zobrazí formulář
+        });
+
+        // Odeslání zprávy na server
+        document.getElementById("send-message").addEventListener("click", function() {
+            var message = document.getElementById("message").value;
+            
+            if (message.trim() !== "") {
+                // Posíláme zprávu na server (PHP)
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "send_email.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        alert("Zpráva byla odeslána!");
+                        document.getElementById("message-form").style.display = 'none';
+                        document.getElementById("message").value = ""; // Vyčistit pole
+                    }
+                };
+                xhr.send("message=" + encodeURIComponent(message)); // Odeslání zprávy
+            } else {
+                alert("Zpráva nemůže být prázdná.");
+            }
+        });
+    </script>
+</body>
+</html>

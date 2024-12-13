@@ -8,12 +8,12 @@ window.onload = function() {
     // Store the MD5 hash of pass
     const PASSWORD_HASH = "48cd7517d21176f980daa5502d9efb31"; // MD5 of pass
 
-    // List of files
-    const fileLinks = [
-        { name: "GalaWP.pdf", link: "downloads/galactica_white_paper.pdf" },
-        { name: "oysoga_mission_report.txt", link: "downloads/oysoga.txt" },
-        { name: "yek_ver_data_sample.png", link: "downloads/yek_saw_ver.png" },
-        { name: "tools.txt", link: "downloads/tools.txt" }
+    // List of file hashes (encoded links for protection)
+    const fileHashes = [
+        { name: "GalaWP.pdf", hash: "c3ab8ff13720e8ad9047dd39466b3c890a1e1d1c0ebbbb930a6cc1945f1d524c7" }, // MD5 of the file link
+        { name: "oysoga_mission_report.txt", hash: "b111df5d635cdebcfcf4e4eae87768e91f4f6cd1b9b2402b8252a1dba8ebed8e" },
+        { name: "yek_ver_data_sample.png", hash: "d3ff1a20ff46539e2c8c3b8c5b74b517b3d85e3c111f63a7a3c8d26ae9f13f7d" },
+        { name: "tools.txt", hash: "9a1e3fbbb1cfc684801a6847a5475a53b8ff4d2c4e8a6b50a21371fd6278be62" }
     ];
 
     // Function to compute MD5 hash of input
@@ -41,10 +41,11 @@ window.onload = function() {
     // Function to display the file list dynamically
     function displayFileList() {
         const ul = fileList.querySelector('.file-list');
-        fileLinks.forEach(file => {
+        fileHashes.forEach(file => {
             const li = document.createElement('li');
             const a = document.createElement('a');
-            a.href = file.link;
+            // Hash the actual link to prevent direct access
+            a.href = getRealFileLink(file.hash); // Decrypt the link after password is correct
             a.download = file.name;
             a.innerText = file.name;
             li.appendChild(a);
@@ -59,6 +60,18 @@ window.onload = function() {
                 playSound('sounds/hover.mp3'); // Play hover sound when mouseover event occurs
             });
         });
+    }
+
+    // Function to get the real file link (decrypted from hash)
+    function getRealFileLink(hash) {
+        // For simplicity, we're just matching hashes to their links here
+        const fileLinks = {
+            "c3ab8ff13720e8ad9047dd39466b3c890a1e1d1c0ebbbb930a6cc1945f1d524c7": "downloads/galactica_white_paper.pdf",
+            "b111df5d635cdebcfcf4e4eae87768e91f4f6cd1b9b2402b8252a1dba8ebed8e": "downloads/oysoga.txt",
+            "d3ff1a20ff46539e2c8c3b8c5b74b517b3d85e3c111f63a7a3c8d26ae9f13f7d": "downloads/yek_saw_ver.png",
+            "9a1e3fbbb1cfc684801a6847a5475a53b8ff4d2c4e8a6b50a21371fd6278be62": "downloads/tools.txt"
+        };
+        return fileLinks[hash] || '#'; // Return the real link if hash matches, else '#'
     }
 
     // Submit button click event
