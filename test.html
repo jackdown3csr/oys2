@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Animace</title>
+    <style>
+        /* Logo container styling */
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            position: relative;
+        }
+
+        pre {
+            font-size: 1.2rem;
+            color: #B0B0B0; /* Initial text color */
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap; /* Allows text to wrap properly */
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Target each character with an animation */
+        pre span {
+            display: inline-block;
+            color: #B0B0B0; /* Initial color of text */
+            animation: change-color 2s forwards;
+        }
+
+        /* Keyframe animation for changing the color */
+        @keyframes change-color {
+            0% {
+                color: #B0B0B0; /* Start with gray */
+            }
+            100% {
+                color: #FFFFFF; /* End with white */
+            }
+        }
+
+        /* Create staggered animation for each character */
+        pre span:nth-child(odd) {
+            animation-delay: 0s; /* Odd characters will change first */
+        }
+
+        pre span:nth-child(even) {
+            animation-delay: 0.5s; /* Even characters will change later */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <pre>
+▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+█ T U R B O - D O W N █
+█ L O A D E R 9.0.32 █
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+        </pre>
+    </div>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const preText = document.querySelector('.logo pre');
+        const text = preText.textContent;  // Get the raw text content of the pre element
+        const newText = text.split('').map(char => `<span>${char}</span>`).join(''); // Wrap each character in a <span>
+        preText.innerHTML = newText;  // Set the modified HTML back to the pre element
+    });
+</script>
+
+</body>
+</html>
