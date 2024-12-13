@@ -5,8 +5,8 @@ window.onload = function() {
     const fileList = document.getElementById('file-list');
     const passwordContainer = document.getElementById('password-container');
 
-    // Store the MD5 hash of "rev"
-    const PASSWORD_HASH = "48cd7517d21176f980daa5502d9efb31"; // MD5 of "rev"
+    // Store the MD5 hash of pass
+    const PASSWORD_HASH = "48cd7517d21176f980daa5502d9efb31"; // MD5 of pass
 
     // Function to compute MD5 hash of input
     function md5(string) {
