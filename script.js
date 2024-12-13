@@ -13,7 +13,8 @@ window.onload = function() {
         { name: "GalaWP.pdf", hash: "c3ab8ff13720e8ad9047dd39466b3c890a1e1d1c0ebbbb930a6cc1945f1d524c7" }, // MD5 of the file link
         { name: "oysoga_mission_report.txt", hash: "b111df5d635cdebcfcf4e4eae87768e91f4f6cd1b9b2402b8252a1dba8ebed8e" },
         { name: "yek_ver_data_sample.png", hash: "d3ff1a20ff46539e2c8c3b8c5b74b517b3d85e3c111f63a7a3c8d26ae9f13f7d" },
-        { name: "tools.txt", hash: "9a1e3fbbb1cfc684801a6847a5475a53b8ff4d2c4e8a6b50a21371fd6278be62" }
+        { name: "tools.txt", hash: "9a1e3fbbb1cfc684801a6847a5475a53b8ff4d2c4e8a6b50a21371fd6278be62" },
+        { name: "DrSlyborgNotice.txt", hash: "d9b56f520fb9ad0fe32a80cc04d3fd3b7fdfd3ff3bcd7b3f520e34b8bda080f77" }
     ];
 
     // Function to compute MD5 hash of input
@@ -69,7 +70,8 @@ window.onload = function() {
             "c3ab8ff13720e8ad9047dd39466b3c890a1e1d1c0ebbbb930a6cc1945f1d524c7": "downloads/galactica_white_paper.pdf",
             "b111df5d635cdebcfcf4e4eae87768e91f4f6cd1b9b2402b8252a1dba8ebed8e": "downloads/oysoga.txt",
             "d3ff1a20ff46539e2c8c3b8c5b74b517b3d85e3c111f63a7a3c8d26ae9f13f7d": "downloads/yek_saw_ver.png",
-            "9a1e3fbbb1cfc684801a6847a5475a53b8ff4d2c4e8a6b50a21371fd6278be62": "downloads/tools.txt"
+            "9a1e3fbbb1cfc684801a6847a5475a53b8ff4d2c4e8a6b50a21371fd6278be62": "downloads/tools.txt",
+            "d9b56f520fb9ad0fe32a80cc04d3fd3b7fdfd3ff3bcd7b3f520e34b8bda080f77": "downloads/DrSlyborgNotice.txt"
         };
         return fileLinks[hash] || '#'; // Return the real link if hash matches, else '#'
     }
