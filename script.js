@@ -30,6 +30,9 @@ window.onload = function() {
     function md5(string) {
         return CryptoJS.MD5(string).toString(CryptoJS.enc.Hex); // Ensure the output is in Hex format
     }
+
+    // Function to check the password and handle access
+    function checkPassword() {
         const password = passwordInput.value.trim();
         const inputHash = md5(password); // Hash the entered password
 
