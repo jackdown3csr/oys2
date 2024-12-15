@@ -12,7 +12,7 @@ window.onload = function() {
     const passwordContainer = document.getElementById('password-container');
 
     // Store the MD5 hash of pass
-    const PASSWORD_HASH = "48cd7517d21176f980daa5502d9efb31"; // MD5 of pass
+    const PASSWORD_HASH = "8e0c4e5a7f125d94fdc9a1e5f929632f"; // MD5 of pass
 
     // List of file hashes (encoded links for protection)
     const fileHashes = [
@@ -30,9 +30,6 @@ window.onload = function() {
     function md5(string) {
         return CryptoJS.MD5(string).toString(CryptoJS.enc.Hex); // Ensure the output is in Hex format
     }
-
-    // Function to check the password and handle access
-    function checkPassword() {
         const password = passwordInput.value.trim();
         const inputHash = md5(password); // Hash the entered password
 
